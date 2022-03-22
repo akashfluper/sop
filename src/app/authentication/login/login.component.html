@@ -1,0 +1,49 @@
+<div class="d-flex justify-content-center align-items-center" style="height:100vh;">
+    <div class="col-md-4">
+        <div class="card card-shadow" style="padding: 15px 0px;">
+            <div class="card-body">
+                <div class="text-center">
+                    <img src="assets/image/homelogo.png"  alt="">
+                </div>
+                <form [formGroup]="loginForm" >
+
+                    <div class="form-group">
+                        <label>User Name</label>
+                        <input type="text" class="form-control" formControlName="email" >
+                        <div class="text-danger" *ngIf="submitted && f.email.errors">
+                            <div *ngIf="f.email.errors.required ">Email is required.
+                            </div>
+                            <!-- <div *ngIf="f.emailId.errors.email ">please enter the valid email
+                            </div> -->
+                        </div>
+                       
+                    </div>
+                    <div class="form-group " style="margin-top: 25px;">
+                        <label>Password</label>
+                        <input type="password"  class="form-control" formControlName="password" >
+                        <div class="text-danger invalid-message" *ngIf="submitted && f.password.errors">
+                            <div *ngIf="f.password.errors.required ">Password is required.
+                            </div>
+                        </div>
+                     
+                    </div>
+
+                    <div class="form-group">
+                        <label class="">
+                        <input class="" type="checkbox" checked="checked">
+                        
+                        <span class=""><a>Remember me</a></span>
+                    </label>
+
+                    </div>
+                    <div class="form-group text-center " style="margin-top: 35px;" >
+                        <button type="button" class="btn btn-block btn-theme" (click)="onSubmitForm()">Sign In</button>
+                        <div style="text-align:right; ">
+                            <span ><a routerLink="../forgot-password">Forgot Password ?</a></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

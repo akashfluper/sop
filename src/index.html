@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SopAdmin</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="assets/image/homelogo.png">
+  <link rel="stylesheet" href="assets/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/angularMaterial.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+  <app-root></app-root>
+
+
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+ <script>
+   var sideStatus="open";
+   function menuOpen(){
+     if(sideStatus=='open'){
+      var sideBar=document.querySelector('.nk-sidebar')
+      sideBar.style.width='55px';
+      sideStatus='close';
+
+      var sideLayout=document.querySelector('.layout-content-body')
+      sideLayout.style.marginLeft='55px';
+
+
+      var textStatus = document.querySelector('.metismenu');
+        textStatus.classList.add('text-remove');
+
+     
+
+      
+     }else{
+      var sideBar=document.querySelector('.nk-sidebar')
+      sideBar.style.width='230px';
+      sideStatus='open';
+
+      var sideLayout=document.querySelector('.layout-content-body')
+      sideLayout.style.marginLeft='230px';
+      
+      var textStatus = document.querySelector('.metismenu');
+        setTimeout(()=>{
+          textStatus.classList.remove('text-remove');
+        },100)
+      
+     
+
+     }
+   }
+ </script>
+</body>
+</html>

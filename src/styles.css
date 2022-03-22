@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700&display=swap');
+@import '~ngx-toastr/toastr';
+body {
+    margin: 0;
+    /* font-family: Roboto, "Helvetica Neue", sans-serif; */
+    font-family: 'Sen', sans-serif;
+    padding: 0px;
+}
+
+th.mat-header-cell {
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Sen', sans-serif;
+
+}
+td.mat-cell{
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Sen', sans-serif;
+
+}

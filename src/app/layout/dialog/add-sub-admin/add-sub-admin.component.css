@@ -1,0 +1,25 @@
+.imgupl {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.img img {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+    
+}
+
+/* button.btn.btn-sm.btn-outline-grey {
+    width: 140px;
+    height: 45px;
+    border: 1px solid hsl(0deg 0% 84%);
+    border-radius: 5px;
+    opacity: 1;
+    background: hsl(0deg 0% 0% / 0%);
+} */
+.selectphoto{
+    position: relative;
+}

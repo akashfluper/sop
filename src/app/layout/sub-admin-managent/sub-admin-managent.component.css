@@ -1,0 +1,41 @@
+*{
+    text-transform: capitalize;
+}
+.file-upload {
+    border: none;
+    width: 200px;
+    height: 145px;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.cameradiv {
+    position: absolute;
+    left: 120px;
+    bottom: 6px;
+}
+.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.features-li ul{
+    padding-left: 0;
+}
+.features-li ul li{
+    list-style: none;
+
+}
+.costum-checkbox{
+    height: 15px;
+    width: 15px;
+    border: 1px solid #5190c8;
+    border-radius: 0;
+}
+.costum-checkbox:hover{
+    background: #b4bec8;
+}
+.add{
+    width: 100px;
+}

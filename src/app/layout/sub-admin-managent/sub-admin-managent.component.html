@@ -1,0 +1,301 @@
+
+
+
+<div id="wrapper">
+    <app-header></app-header>
+    <div class="layout-main dashboardPage">
+        <app-left-sidebar></app-left-sidebar>
+        <div class="layout-content">
+            <div class="layout-content-body">
+               <div class="container-fluid">
+                <div class="title-bar ">
+                    <h1 class="title-bar-title">
+                        <span class="">sub admin management</span>
+                    </h1>
+                </div>
+
+
+                    <div class="row gutter-xs">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="">
+
+                                
+                                <div class="py-3">
+
+                                    <!-- <div class="row gutter-xs margin-top-10"> -->
+                                    <div class="d-flex" style="justify-content: space-between;">
+    
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3" style="padding: 0px;">
+                                            <div class="form-group">
+                                                <input type="text" placeholder="Search User" class="form-control">
+                                            </div>
+                                        </div>
+    
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 " style="padding: 0px; text-align: right;">
+                                            <div class="">
+                                                <a class="notification me-4  align-self-center"><i class="fa fa-bell "
+                                                    aria-hidden="true"></i></a>
+                                               <!-- <button class="btn btn-primary me-3" (click)="openDialog1()" >add sub admin</button> -->
+                                               <button class="btn btn-primary me-3" data-bs-target="#add-modal" data-bs-toggle="modal" >add sub admin</button>
+
+                                            </div>
+
+
+
+                                              
+
+
+                                            
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="">
+                                    <div class="mat-elevation-z8">
+                                        <table mat-table [dataSource]="dataSource" style="width: 100%;">
+
+                                            <!-- Checkbox Column -->
+                    
+                                            <ng-container matColumnDef="select">
+                                                <th mat-header-cell *matHeaderCellDef>
+                    
+                                                </th>
+                                                <td mat-cell *matCellDef="let row">
+                    
+                                                </td>
+                                            </ng-container>
+                    
+                                            <!-- Position Column -->
+                    
+                                            <ng-container matColumnDef="position">
+                                                <th mat-header-cell *matHeaderCellDef> S.No. </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                                            </ng-container>
+                    
+                                            <!-- Name Column -->
+                                            <ng-container matColumnDef="name">
+                                                <th mat-header-cell *matHeaderCellDef> admin Name </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                                            </ng-container>
+                    
+                                            <!-- image Column -->
+                                            <ng-container matColumnDef="weight">
+                                                <th mat-header-cell *matHeaderCellDef> admin image </th>
+                                                <td mat-cell *matCellDef="let element"> <i class="fa fa-file-image-o" aria-hidden="true"></i> </td>
+                                            </ng-container>
+                    
+                                            <!-- email Column -->
+                                            <ng-container matColumnDef="symbol">
+                                                <th mat-header-cell *matHeaderCellDef> email adress </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                                            </ng-container>
+                    
+                    
+                    
+                                            <!-- contact Column -->
+                                            <ng-container matColumnDef="contact">
+                                                <th mat-header-cell *matHeaderCellDef> contact number </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.contact}} </td>
+                                            </ng-container>
+                    
+                    
+                    
+                                            <!-- admin id Column -->
+                                            <ng-container matColumnDef="id">
+                                                <th mat-header-cell *matHeaderCellDef> admin id </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                                            </ng-container>
+                    
+                    
+                    
+                                            <!-- document Column -->
+                                            <ng-container matColumnDef="document">
+                                                <th mat-header-cell *matHeaderCellDef> document </th>
+                                                <td mat-cell *matCellDef="let element"> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                                            </ng-container>
+                    
+                                            <!-- action Column -->
+                                            <ng-container matColumnDef="action">
+                                                <th mat-header-cell *matHeaderCellDef> action </th>
+                                                <td mat-cell *matCellDef="let element">
+                                                    <div class="d-flex align-items-center justify-content-center">
+                                                        <button  mat-mini-fab color="primary"  matTooltip="credentials" (click)="openDialog()"  class=" mt-1 mx-3 " data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-key"
+                                                                aria-hidden="true"></i></button>
+                                                        <button mat-mini-fab color="accent" matTooltip="access" class="  mx-3 "><i class="fa fa-unlock"
+                                                                aria-hidden="true"></i></button>
+                                                        <button mat-mini-fab color="basic" matTooltip="track" class=" mx-3 "><i class="fa fa-eye"
+                                                                aria-hidden="true"></i></button>
+                                                        <button mat-mini-fab color="warn"matTooltip="Delete" class="  mx-3 " title="Delete" data-bs-toggle="modal"
+                                                            data-bs-target="#delete-modal"><i class="fa fa-trash"></i></button>
+                                                    </div>
+                                                </td>
+                                            </ng-container>
+                                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+                                                (click)="selection.toggle(row)">
+                                            </tr>
+                                        </table>
+                                       
+                                        
+
+                                      </div>
+                                      <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                                                       showFirstLastButtons 
+                                                       aria-label="Select page of periodic elements">
+                                      </mat-paginator>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               </div>           
+            </div>
+        </div>
+    </div>
+
+
+    
+</div>
+
+
+<!-- model open  -->
+
+<div class="modal fade" id="add-modal">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content px-3">
+            <div class="modal-body">
+                <button mat-icon-button color="warn" mat-dialog-close class="close " data-bs-dismiss="modal"
+                    aria-label="Close">
+                    <i class="fa fa-times"></i>
+                </button>
+
+                <form class="margin-top-20">
+
+                    <div class="col-md-12 text-center">
+                        <div class="file-upload m-auto">
+                            <label class="cameradiv">
+                                <img src="assets/image/camera.png">
+                                <input type="file" name="somename" (change)="multipleFiles1($event)" />
+                            </label>
+                            <div class="img">
+                                <img *ngIf="!profile_image" src="assets/image/placeholder.jpg" />
+                                <img *ngIf="profile_image" src={{profile_image}} />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row px-0 mt-4 mb-4">
+
+                        <input placeholder="Enter sub admin name" class="w-100 mb-2">
+                        <input placeholder="Enter sub admin contact number" class="w-100 mb-2">
+                        <input placeholder="Enter sub admin Email Id" class="w-100 mb-2">
+                        <input placeholder="Enter sub admin Id" class="w-100 mb-2">
+                        <input placeholder="Enter sub admin Password" class="w-100 mb-5">
+                        <input type="file" class="form-control" placeholder="Upload ID Proof">
+
+
+                    </div>
+
+
+
+                    <div class="d-flex justify-content-between">
+                        <div class="features-li">
+                            <h5>feature</h5>
+                            <ul>
+                                <li>
+                                    <div class="d-flex justify-content-between">
+                                        <span class="me-2">management</span>
+                                        <span><i class="fa fa-trash text-danger" aria-hidden="true"></i></span>
+                                    </div>
+
+                                </li>
+                                <li>
+                                    <div class="d-flex justify-content-between">
+                                        <span class="me-2">dashboard</span>
+                                        <span><i class="fa fa-trash text-danger" aria-hidden="true"></i></span>
+                                    </div>
+
+
+
+                                </li>
+
+                                <li>
+                                    <div class="d-flex justify-content-between">
+                                        <span class="me-2">admin</span>
+                                        <span><i class="fa fa-trash text-danger" aria-hidden="true"></i></span>
+                                    </div>
+
+                                </li>
+
+
+                            </ul>
+                        </div>
+                        <div class="features-li">
+                            <button class=" border-0 bg-transparent" data-bs-target="#staticBackdrop"
+                                data-bs-toggle="modal"><i class="fa fa-plus-circle text-primary me-2" aria-hidden="true"></i>add
+                                feature</button>
+                            <ul class="border p-2 overflow-auto" style="height: 100px; width: 180px;">
+                                <li>
+                                    <input type="checkbox" value="management" id="management" class="costum-checkbox form-check-input    me-2">
+                                    <label for="management"> management </label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="dashboard" class="me-2 costum-checkbox form-check-input   ">
+                                    <label for="dashboard">dashboard</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="admin" class="me-2 costum-checkbox form-check-input   ">
+                                    <label for="admin">admin</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="admin" class="me-2 costum-checkbox form-check-input   ">
+                                    <label for="admin">admin</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="admin" class="me-2 costum-checkbox form-check-input   ">
+                                    <label for="admin">admin</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="admin" class="me-2 costum-checkbox form-check-input   ">
+                                    <label for="admin">admin</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                    <div class="text-center mt-3">
+                        <button class="btn btn-primary add">add</button>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
